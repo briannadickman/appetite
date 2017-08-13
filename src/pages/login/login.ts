@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { User } from '../../models/user';
-
-/**
- * Generated class for the LoginPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @IonicPage()
 @Component({
@@ -18,12 +12,22 @@ export class LoginPage {
 
   user = {} as User;
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    private AFauth: AngularFireAuth,
+    public navCtrl: NavController,
+    public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+  async login(user: User) {
+    const result = this.AFauth.auth.signInWithEmailAndPassword(user.email, user.password);
+    if(result) {
+      this.navCtrl.setRoot('HomePage');
+    }
+
+  }
+
+  register() {
+    this.navCtrl.push('RegisterPage');
   }
 
 }
