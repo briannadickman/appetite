@@ -15,4 +15,44 @@
 
 <ion-content padding>
 
+<ion-list>
+
+  <ion-item-sliding #item>
+    <ion-item>
+      <ion-card>
+        <!-- <img src="/imgs/thaifood.jpeg"/> -->
+        <ion-card-content>
+          <ion-card-title>
+            <h1>Thai</h1>
+          </ion-card-title>
+            <p>Thai cooking places emphasis on lightly prepared dishes with strong aromatic components and a spicy edge.</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+
+    <ion-item>
+      <ion-card>
+        <!-- <img src="/imgs/thaifood.jpeg"/> -->
+        <ion-card-content>
+          <ion-card-title>
+            <h1>Italian</h1>
+          </ion-card-title>
+            <p>Italian cuisine is characterized by its simplicity, with many dishes having only four to eight ingredients. Italian cooks rely chiefly on the quality of the ingredients rather than on elaborate preparation.[</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+
+    <ion-item-options side="left" (ionSwipe)='passItem(item)'>
+      <button ion-button color='danger' expandable (click)="passItem(item)">Nah</button>
+    </ion-item-options>
+
+    <ion-item-options side="right" (ionSwipe)='keepItem(item)'>
+      <button ion-button expandable (click)="keepItem(item)">Yum!</button>
+    </ion-item-options>
+
+  </ion-item-sliding>
+
+
+</ion-list>
+
 </ion-content>

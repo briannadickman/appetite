@@ -18,7 +18,7 @@ export class HomePage {
 
   ionViewWillLoad() {
     this.AFauth.authState.subscribe(data => {
-      if ( data.email ) {
+      if (data && data.email) {
         this.toast.create({
           message: 'Welcome back, ${data.email}',
           duration: 3000
@@ -31,6 +31,14 @@ export class HomePage {
       }
 
     });
+  }
+
+  passItem() {
+    console.log('Passing on food. Delete from view.');
+  }
+
+  keepItem() {
+    console.log('Keeping food! Send to Eats list!');
   }
 
 }
