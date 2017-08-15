@@ -10,6 +10,12 @@
 <ion-list>
   <ion-list-header><h2>What do you need?</h2></ion-list-header>
   <ion-item-sliding>
+
+
+    <ion-item *ngFor="let food of foods | async" (click)="showOptions(food.$key, food.name)">
+      {{food.name}}
+    </ion-item>
+
     <ion-item>
       <h2>Apples</h2>
     </ion-item>
@@ -66,5 +72,5 @@
 
 </ion-list>
 
-<button ion-button (click)='navigateToAddFood()'>Add Food</button>
+<button ion-button (click)='addFood()'>Add Food</button>
 </ion-content>

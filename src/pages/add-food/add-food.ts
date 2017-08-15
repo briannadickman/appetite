@@ -16,12 +16,12 @@ export class AddFoodPage {
     public navParams: NavParams) {
   }
 
-  foodItemRef$: FirebaseListObservable<food[]>
+  // foodItemRef$: FirebaseListObservable<food[]>
 
-  addNewFood(food) {
-    console.log('Adding ' + food + ' to list.');
-    this.foodItemRef$.push(food);
-    this.navCtrl.push(HomePage);
-  }
+  // addNewFood(food) {
+  //   console.log('Adding ' + food + ' to list.');
+  //   this.foodItemRef$.push(food);
+  //   this.navCtrl.push(HomePage);
+  // }
 
 }

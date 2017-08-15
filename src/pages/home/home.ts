@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AddFoodPage } from '../add-food/add-food';
+// import { AddFoodPage } from '../add-food/add-food';
+import {AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 
 @IonicPage()
 @Component({
@@ -10,15 +11,20 @@ import { AddFoodPage } from '../add-food/add-food';
 })
 export class HomePage {
 
+  foods: FirebaseListObservable<any>;
+
   constructor(
-    private AFauth: AngularFireAuth,
+    private afAuth: AngularFireAuth,
     private toast: ToastController,
     public navCtrl: NavController,
-    public navParams: NavParams) {
-  }
+    public navParams: NavParams,
+    public alertCtrl: AlertController,
+    db: AngularFireDatabase) {
+      this.foods = db.list('/foods');
+}
 
   ionViewWillLoad() {
-    this.AFauth.authState.subscribe(data => {
+    this.afAuth.authState.subscribe(data => {
       if (data && data.email) {
         this.toast.create({
           message: 'Welcome back, ${data.email}',
@@ -39,10 +45,40 @@ export class HomePage {
   }
 
 
-  navigateToAddFood() {
-    //Search Yelp
-    console.log('Going to AddFoodPage');
-    this.navCtrl.push(AddFoodPage);
-  }
+  // navigateToAddFood() {
+  //   //Search Yelp
+  //   console.log('Going to AddFoodPage');
+  //   this.navCtrl.push(AddFoodPage);
+  // }
+
+  addFood(){
+  let prompt = this.alertCtrl.create({
+    title: 'Food Name',
+    message: "Enter a food to add to your list.",
+    inputs: [
+      {
+        name: 'name',
+        placeholder: 'Name'
+      },
+    ],
+    buttons: [
+      {
+        text: 'Cancel',
+        handler: data => {
+          console.log('Cancel clicked');
+        }
+      },
+      {
+        text: 'Save',
+        handler: data => {
+          this.foods.push({
+            title: data.name
+          });
+        }
+      }
+    ]
+  });
+  prompt.present();
+}
 
 }
