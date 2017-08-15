@@ -15,12 +15,9 @@
     </ion-item>
 
     <ion-item-options side="left" (ionSwipe)='deleteItem(item)'>
-      <button ion-button color='danger' expandable (click)="deleteItem(item)">Nah</button>
+      <button ion-button color='danger' expandable (click)="deleteItem(item)">In Cart</button>
     </ion-item-options>
 
-    <ion-item-options side="right" (ionSwipe)='keepItem(item)'>
-      <button ion-button expandable (click)="keepItem(item)">Yum!</button>
-    </ion-item-options>
   </ion-item-sliding>
 
   <ion-item-sliding #item>
@@ -29,12 +26,9 @@
     </ion-item>
 
     <ion-item-options side="left" (ionSwipe)='deleteItem(item)'>
-      <button ion-button color='danger' expandable (click)="deleteItem(item)">Nah</button>
+      <button ion-button color='danger' expandable (click)="deleteItem(item)">In Cart</button>
     </ion-item-options>
 
-    <ion-item-options side="right" (ionSwipe)='keepItem(item)'>
-      <button ion-button expandable (click)="keepItem(item)">Yum!</button>
-    </ion-item-options>
   </ion-item-sliding>
 
   <ion-item-sliding #item>
@@ -43,12 +37,9 @@
     </ion-item>
 
     <ion-item-options side="left" (ionSwipe)='deleteItem(item)'>
-      <button ion-button color='danger' expandable (click)="deleteItem(item)">Nah</button>
+      <button ion-button color='danger' expandable (click)="deleteItem(item)">In Cart</button>
     </ion-item-options>
 
-    <ion-item-options side="right" (ionSwipe)='keepItem(item)'>
-      <button ion-button expandable (click)="keepItem(item)">Yum!</button>
-    </ion-item-options>
   </ion-item-sliding>
 
   <ion-item-sliding #item>
@@ -57,12 +48,9 @@
     </ion-item>
 
     <ion-item-options side="left" (ionSwipe)='deleteItem(item)'>
-      <button ion-button color='danger' expandable (click)="deleteItem(item)">Nah</button>
+      <button ion-button color='danger' expandable (click)="deleteItem(item)">In Cart</button>
     </ion-item-options>
 
-    <ion-item-options side="right" (ionSwipe)='keepItem(item)'>
-      <button ion-button expandable (click)="keepItem(item)">Yum!</button>
-    </ion-item-options>
   </ion-item-sliding>
 
   <ion-item-sliding #item>
@@ -71,15 +59,12 @@
     </ion-item>
 
     <ion-item-options side="left" (ionSwipe)='deleteItem(item)'>
-      <button ion-button color='danger' expandable (click)="deleteItem(item)">Nah</button>
+      <button ion-button color='danger' expandable (click)="deleteItem(item)">In Cart</button>
     </ion-item-options>
 
-    <ion-item-options side="right" (ionSwipe)='keepItem(item)'>
-      <button ion-button expandable (click)="keepItem(item)">Yum!</button>
-    </ion-item-options>
   </ion-item-sliding>
 
 </ion-list>
 
-<button ion-button (click)='searchYelpToResults()'>Add Food</button>
+<button ion-button (click)='navigateToAddFood()'>Add Food</button>
 </ion-content>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AddFoodPage } from '../add-food/add-food';
 
 @IonicPage()
 @Component({
@@ -37,14 +38,11 @@ export class HomePage {
     console.log('Passing on food. Delete from view.');
   }
 
-  keepItem(item) {
-    console.log(item);
-    console.log('Keeping ' + item + '! Send to Eats list!');
-  }
 
-  searchYelpToResults(foodChoices) {
+  navigateToAddFood() {
     //Search Yelp
-    console.log('Searching Yelp');
+    console.log('Going to AddFoodPage');
+    this.navCtrl.push(AddFoodPage);
   }
 
 }

@@ -8,12 +8,14 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
+import { AddFoodPage } from '../pages/add-food/add-food';
 import { FIREBASE_CONFIG } from './app.firebase.config';
 
 @NgModule({
   declarations: [
     MyApp,
-    LoginPage
+    LoginPage,
+    AddFoodPage
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    LoginPage
+    LoginPage,
+    AddFoodPage
   ],
   providers: [
     StatusBar,
