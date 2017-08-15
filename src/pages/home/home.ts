@@ -33,12 +33,18 @@ export class HomePage {
     });
   }
 
-  passItem() {
+  deleteItem() {
     console.log('Passing on food. Delete from view.');
   }
 
-  keepItem() {
-    console.log('Keeping food! Send to Eats list!');
+  keepItem(item) {
+    console.log(item);
+    console.log('Keeping ' + item + '! Send to Eats list!');
+  }
+
+  searchYelpToResults(foodChoices) {
+    //Search Yelp
+    console.log('Searching Yelp');
   }
 
 }
