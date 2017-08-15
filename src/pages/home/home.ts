@@ -41,12 +41,13 @@ export class HomePage {
 
   deleteItem() {
     console.log('Passing on food. Delete from view.');
+    
   }
 
   addFood(){
   let prompt = this.alertCtrl.create({
-    title: 'Food Name',
-    message: "Enter a food to add to your list.",
+    title: 'Item Name',
+    message: "Enter an item to add to your list.",
     inputs: [
       {
         name: 'name',
