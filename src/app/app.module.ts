@@ -9,14 +9,12 @@ import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable 
 
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
-import { AddFoodPage } from '../pages/add-food/add-food';
 import { FIREBASE_CONFIG } from './app.firebase.config';
 
 @NgModule({
   declarations: [
     MyApp,
-    LoginPage,
-    AddFoodPage
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -28,8 +26,7 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    LoginPage,
-    AddFoodPage
+    LoginPage
   ],
   providers: [
     StatusBar,

@@ -9,68 +9,19 @@
 
 <ion-list>
   <ion-list-header><h2>What do you need?</h2></ion-list-header>
-  <ion-item-sliding>
 
-
-    <ion-item *ngFor="let food of foods | async" (click)="showOptions(food.$key, food.name)">
-      {{food.name}}
-    </ion-item>
-
+  <ion-item-sliding #item *ngFor="let food of foods | async">
     <ion-item>
-      <h2>Apples</h2>
+      <h2>{{food.title}}</h2>
     </ion-item>
 
-    <ion-item-options side="left" (ionSwipe)='deleteItem(item)'>
-      <button ion-button color='danger' expandable (click)="deleteItem(item)">In Cart</button>
-    </ion-item-options>
-
-  </ion-item-sliding>
-
-  <ion-item-sliding #item>
-    <ion-item>
-      <h2>Bread</h2>
-    </ion-item>
-
-    <ion-item-options side="left" (ionSwipe)='deleteItem(item)'>
-      <button ion-button color='danger' expandable (click)="deleteItem(item)">In Cart</button>
-    </ion-item-options>
-
-  </ion-item-sliding>
-
-  <ion-item-sliding #item>
-    <ion-item>
-      <h2>Eggs</h2>
-    </ion-item>
-
-    <ion-item-options side="left" (ionSwipe)='deleteItem(item)'>
-      <button ion-button color='danger' expandable (click)="deleteItem(item)">In Cart</button>
-    </ion-item-options>
-
-  </ion-item-sliding>
-
-  <ion-item-sliding #item>
-    <ion-item>
-      <h2>Milk</h2>
-    </ion-item>
-
-    <ion-item-options side="left" (ionSwipe)='deleteItem(item)'>
-      <button ion-button color='danger' expandable (click)="deleteItem(item)">In Cart</button>
-    </ion-item-options>
-
-  </ion-item-sliding>
-
-  <ion-item-sliding #item>
-    <ion-item>
-      <h2>Cat Food</h2>
-    </ion-item>
-
-    <ion-item-options side="left" (ionSwipe)='deleteItem(item)'>
-      <button ion-button color='danger' expandable (click)="deleteItem(item)">In Cart</button>
-    </ion-item-options>
+      <ion-item-options side="right" (ionSwipe)='deleteItem(item)'>
+        <button ion-button color='danger' expandable (click)="deleteItem(item)">In Cart</button>
+      </ion-item-options>
 
   </ion-item-sliding>
 
 </ion-list>
 
-<button ion-button (click)='addFood()'>Add Food</button>
+<button ion-button (click)='addFood()'>Add Item</button>
 </ion-content>

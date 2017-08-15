@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
-// import { AddFoodPage } from '../add-food/add-food';
-import {AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
+import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 
 @IonicPage()
 @Component({
@@ -43,13 +42,6 @@ export class HomePage {
   deleteItem() {
     console.log('Passing on food. Delete from view.');
   }
-
-
-  // navigateToAddFood() {
-  //   //Search Yelp
-  //   console.log('Going to AddFoodPage');
-  //   this.navCtrl.push(AddFoodPage);
-  // }
 
   addFood(){
   let prompt = this.alertCtrl.create({
