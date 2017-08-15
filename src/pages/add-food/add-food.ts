@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
-
-/**
- * Generated class for the AddFoodPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @IonicPage()
 @Component({
@@ -16,11 +10,17 @@ import { HomePage } from '../home/home';
 })
 export class AddFoodPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    private database: AngularFireDatabase,
+    public navCtrl: NavController,
+    public navParams: NavParams) {
   }
+
+  foodItemRef$: FirebaseListObservable<food[]>
 
   addNewFood(food) {
     console.log('Adding ' + food + ' to list.');
+    this.foodItemRef$.push(food);
     this.navCtrl.push(HomePage);
   }
 
