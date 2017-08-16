@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, AlertController, App } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
+import { LoginPage } from '../login/login';
 
 @IonicPage()
 @Component({
@@ -18,6 +19,7 @@ export class HomePage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public alertCtrl: AlertController,
+    public app: App,
     db: AngularFireDatabase) {
       this.foods = db.list('/foods');
 }
@@ -41,6 +43,9 @@ export class HomePage {
 
   signOut() {
     console.log('Signing out');
+    this.navCtrl.setRoot(LoginPage);
+    // const root = this.app.getActiveNavs();
+    // this.root[0].setRoot(LoginPage);
   }
 
   deleteItem(food) {
