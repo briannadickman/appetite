@@ -26,7 +26,7 @@ export class HomePage {
     this.afAuth.authState.subscribe(data => {
       if (data && data.email) {
         this.toast.create({
-          message: 'Welcome back, ${data.email}',
+          message: 'Welcome back!',
           duration: 3000
         }).present();
       } else {
@@ -39,9 +39,14 @@ export class HomePage {
     });
   }
 
-  deleteItem() {
-    console.log('Passing on food. Delete from view.');
-    
+  signOut() {
+    console.log('Signing out');
+  }
+
+  deleteItem(food) {
+    console.log(food);
+    console.log(food.title + ' in cart. Delete from view.');
+    this.foods.remove(food);
   }
 
   addFood(){
