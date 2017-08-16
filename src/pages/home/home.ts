@@ -56,12 +56,11 @@ export class HomePage {
 
   addFood(){
   let prompt = this.alertCtrl.create({
-    title: 'Item Name',
-    message: "Enter an item to add to your list.",
+    title: 'Add Item to List',
     inputs: [
       {
         name: 'name',
-        placeholder: 'Name'
+        placeholder: 'I need...'
       },
     ],
     buttons: [

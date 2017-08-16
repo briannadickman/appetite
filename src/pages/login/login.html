@@ -1,25 +1,28 @@
 <ion-header>
 
-  <ion-navbar color = 'primary'>
-    <ion-title>Login</ion-title>
+  <ion-navbar color = 'primary' padding>
+    <ion-title text-center>ShopList</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-list-header no-lines>
+      <h2>shopping made simple</h2>
+    </ion-list-header>
 
-  <ion-item>
-    <ion-label floating> Email Address </ion-label>
-    <ion-input type='text' [(ngModel)] = 'user.email'></ion-input>
-  </ion-item>
+    <ion-item>
+        <ion-label floating> Email Address </ion-label>
+        <ion-input type='text' [(ngModel)] = 'user.email'></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label floating> Password </ion-label>
-    <ion-input type='password' [(ngModel)] = 'user.password'></ion-input>
-  </ion-item>
+    <ion-item>
+        <ion-label floating> Password </ion-label>
+        <ion-input type='password' [(ngModel)] = 'user.password'></ion-input>
+    </ion-item>
 
-  <button ion-button (click) = 'login(user)'> Login </button>
-  <button ion-button color='light' (click) = 'register()'> Register </button>
-
+    <br>
+      <button ion-button full color = 'secondary' (click) = 'login(user)'> Login </button>
+      <button ion-button full color='light' (click) = 'register()'> Register </button>
 </ion-content>

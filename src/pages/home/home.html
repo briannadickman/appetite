@@ -1,28 +1,31 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Shopping List</ion-title>
+  <ion-navbar color='primary'>
+    <ion-title text-center>ShopList</ion-title>
     <ion-buttons end>
-      <button ion-button (click)='signOut(user)'>Sign Out</button>
+      <button ion-button icon-only (click)='signOut(user)' id='signOutBtn'><ion-icon name="exit"></ion-icon></button>
     </ion-buttons>
   </ion-navbar>
 
 </ion-header>
-<ion-content padding>
+<ion-content padding class='has-header'>
 
 <ion-list>
-  <ion-list-header><h2>What do you need?</h2></ion-list-header>
+  <ion-list-header>
+    <h2 color='dark' text-center>What are we getting today?</h2>
+  </ion-list-header>
 
   <ion-item-sliding *ngFor="let food of foods | async">
       <ion-item>
         <h2>{{food.title}}</h2>
       </ion-item>
       <ion-item-options side="right" (ionSwipe)='deleteItem(food)'>
-        <button ion-button color='danger' expandable (click)="deleteItem(food)">In Cart</button>
+        <button ion-button color='light' expandable (click)="deleteItem(food)">In Cart</button>
       </ion-item-options>
   </ion-item-sliding>
 
 </ion-list>
 
-<button ion-button (click)='addFood()'>Add Item</button>
+<button color='secondary' ion-button full (click)='addFood()'>Add Item</button>
+
 </ion-content>

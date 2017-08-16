@@ -34,11 +34,11 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
+  primary:    #fedc3d, //butter
+  secondary:  #01abaa, //azure
   danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  light:      #fea680, //peach
+  dark:       #000000 //black
 );
 
 
@@ -86,3 +86,16 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+$toolbar-ios-title-font-size: 3.7rem;
+$toolbar-md-title-font-size: 4rem;
+$toolbar-wp-title-font-size: 3.5rem;
+
+$alert-ios-border-radius: 5px;
+$alert-ios-background: #fea680;
+
+$alert-ios-button-background-color: #000000;
+$alert-ios-button-text-color: #ffffff;
+$alert-ios-button-border-color: #000000;
+$alert-ios-button-border-width: 2px;
+$alert-ios-button-font-size: 15px;
